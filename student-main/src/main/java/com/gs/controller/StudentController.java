@@ -6,10 +6,7 @@ import com.gs.util.ExportExcel;
 import com.gs.util.FileCopy;
 import com.gs.util.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.FileNotFoundException;
@@ -57,6 +54,7 @@ public class StudentController {
     }
 
     @RequestMapping("updateStudent")
+    @ExceptionHandler
     public String updateStudent(StudentInfo studentInfo){
         studentService.updateStudent(studentInfo);
         return "200";
