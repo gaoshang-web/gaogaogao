@@ -54,7 +54,6 @@ public class StudentController {
     }
 
     @RequestMapping("updateStudent")
-    @ExceptionHandler
     public String updateStudent(StudentInfo studentInfo){
         studentService.updateStudent(studentInfo);
         return "200";
